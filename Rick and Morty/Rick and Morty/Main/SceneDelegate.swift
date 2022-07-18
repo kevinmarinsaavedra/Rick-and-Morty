@@ -11,29 +11,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        let appCoordinator = AppCoordinator()
-        let navigationController = appCoordinator.start()
-        
-        let standardAppearance = UINavigationBarAppearance()
-        standardAppearance.configureWithOpaqueBackground()
-        standardAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        standardAppearance.backgroundColor = UIColor(hexString: "181818")
-        
-        let compactAppearance = standardAppearance.copy()
-        
-        navigationController.navigationBar.tintColor = .white
-        navigationController.navigationBar.standardAppearance = standardAppearance
-        navigationController.navigationBar.scrollEdgeAppearance = standardAppearance
-        navigationController.navigationBar.compactAppearance = compactAppearance
+        let viewController = MainTabBarController()
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = navigationController
+        window?.rootViewController = viewController
         window?.makeKeyAndVisible()
     }
 

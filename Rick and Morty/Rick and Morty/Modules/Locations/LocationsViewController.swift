@@ -9,6 +9,14 @@ import UIKit
 
 class LocationsViewController: UIViewController {
 
+    //MARK: - @IBOutlet VARIABLES
+
+    //MARK: - VARIABLES
+    
+    //MARK: - BUILDER
+    
+    //MARK: - LIFECYCLE
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

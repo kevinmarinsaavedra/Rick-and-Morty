@@ -3,12 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CharactersViewController" customModule="Rick_and_Morty" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="Exn-IY-Q2B" id="xoo-SZ-CXf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,9 +18,36 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Exn-IY-Q2B">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" name="background"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XUQ-hJ-VDA">
+                        <size key="itemSize" width="180" height="190"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="umN-9D-DKN"/>
+                        <outlet property="delegate" destination="-1" id="9sT-UZ-Iyz"/>
+                    </connections>
+                </collectionView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="141" y="106"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="Exn-IY-Q2B" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UTn-Yy-guc"/>
+                <constraint firstItem="Exn-IY-Q2B" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="V7b-fD-74g"/>
+                <constraint firstItem="Exn-IY-Q2B" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="aNl-Qy-Mx5"/>
+                <constraint firstItem="Exn-IY-Q2B" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="xjx-7W-YMi"/>
+            </constraints>
+            <point key="canvasLocation" x="140.57971014492756" y="105.80357142857143"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

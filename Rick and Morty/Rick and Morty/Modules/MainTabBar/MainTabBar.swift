@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: BaseUITabBarController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,22 +16,14 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupTabBar() {
-        tabBar.barTintColor = UIColor(hexString: "222427")
-        tabBar.unselectedItemTintColor = .lightGray
-        tabBar.tintColor = .white
-
-        if #available(iOS 15.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            
-            // TAB BAR BACKGROUND COLOR HERE. (same as above)
-            appearance.backgroundColor = UIColor(hexString: "181818")
-            UITabBar.appearance().standardAppearance = appearance
-            UITabBar.appearance().scrollEdgeAppearance = UITabBar.appearance().standardAppearance
-        }
+        self.setupAppearance()
         
         //First Tab
-        let charactersVC = CharactersViewController()
+        let charactersCoordinator = CharactersCoordinator(navController: self.navigationController)
+        
+        guard let charactersVC = charactersCoordinator.start() else {
+            return
+        }
         
         charactersVC.tabBarItem = UITabBarItem(
             title: "Characters",
