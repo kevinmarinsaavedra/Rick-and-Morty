@@ -20,6 +20,9 @@ class CharactersViewController: BaseViewController {
     
     private struct Constant {
         static let cellNibName = "CharacterCell"
+        static let widthCell: CGFloat = 180
+        static let heightCell: CGFloat = 190
+        static let minimumInteritemSpacingForSectionAt: CGFloat = 10
     }
     
     var presenter: CharactersPresenterProtocol!
@@ -89,5 +92,23 @@ extension CharactersViewController: UICollectionViewDelegateFlowLayout, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         presenter.navigationDetail(character: viewModel.characters[indexPath.row])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        let space = ( collectionView.bounds.width - (Constant.widthCell * 2) ) / 3
+        
+        return UIEdgeInsets(top: 10, left: space, bottom: 10, right: space)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        let space = ( collectionView.bounds.width - (Constant.widthCell * 2) ) / 3
+        
+        print(collectionView.bounds.width, Constant.widthCell, collectionView.bounds.width - (Constant.widthCell * 2), space)
+        
+        return space
     }
 }
