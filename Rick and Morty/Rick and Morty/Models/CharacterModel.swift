@@ -7,13 +7,14 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 enum Character {
 
     //FetchCharacters
     enum FetchCharacters {
         struct Request: Codable {
-            
+            var parameters: Parameters?
         }
         
         struct Response: Codable {
@@ -31,7 +32,30 @@ enum Character {
         }
     }
     
+    //FetchCharacter
+    enum FetchCharacter {
+        struct Request: Codable {
+            var id: Int?
+        }
+        
+        struct Response: Codable {
+            
+        }
+        
+        struct ViewModel {
+            let character: CharacterModel
+        }
+    }
+    
     //MARK: - MODEL
+    
+    struct Parameters: Codable {
+        let name: String?
+
+        enum CodingKeys: String, CodingKey {
+            case name = "name"
+        }
+    }
     
     // MARK: - Info
     struct InfoModel: Codable {
@@ -50,32 +74,32 @@ enum Character {
 
     // MARK: - Result
     struct CharacterModel: Codable {
-        //let id: Int?
+        let id: Int?
         let name: String?
-        let status: CharacterStatus?
+        var status: CharacterStatus?
         let species: String?
-        /*/let type: String?
+        let type: String?
         let gender: String?
         let origin: LocationModel?
-        let location: LocationModel?*/
+        let location: LocationModel?
         let image: String?
-        /*let episode: [String]?
+        let episode: [String]?
         let url: String?
-        let created: String?*/
+        let created: String?
 
         enum CodingKeys: String, CodingKey {
-            //case id = "id"
+            case id = "id"
             case name = "name"
             case status = "status"
             case species = "species"
-            /*case type = "type"
+            case type = "type"
             case gender = "gender"
             case origin = "origin"
-            case location = "location"*/
+            case location = "location"
             case image = "image"
-            /*case episode = "episode"
+            case episode = "episode"
             case url = "url"
-            case created = "created"*/
+            case created = "created"
         }
     }
 
@@ -92,9 +116,9 @@ enum Character {
     
     //MARK: - ENUM
     enum CharacterStatus: String, Codable {
-        case alive = "alive"
-        case dead = "dead"
-        case unknown = "unknow"
+        case alive = "Alive"
+        case dead = "Dead"
+        case unknown = "unknown"
         
         func getColor() -> UIColor {
             switch self {

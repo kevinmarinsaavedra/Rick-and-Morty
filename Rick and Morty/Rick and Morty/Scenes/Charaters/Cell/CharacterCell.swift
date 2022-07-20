@@ -28,31 +28,9 @@ class CharacterCell: UICollectionViewCell {
         
         content.borderColor = character.status?.getColor()
         
-        downloadAndShowImage(imageURL: character.image)
+        image.downloadAndShowImage(imageURL: character.image, placeholder: "image-placeholder")
         name.text = character.name
         statusAndSpecie.text = "\(character.status?.rawValue ?? "") - \(character.species ?? "")"
-    }
-    
-    func downloadAndShowImage(imageURL: String?) {
-        let url = URL(string: imageURL ?? "")
-        image.kf.indicatorType = .activity
-        image.kf.setImage(
-            with: url,
-            placeholder: UIImage(named: "image-placeholder"),
-            options: [
-                .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
-                .cacheOriginalImage
-            ])
-        {
-            result in
-            switch result {
-            case .success(let value):
-                print("Task done for: \(value.source.url?.absoluteString ?? "")")
-            case .failure(let error):
-                print("Job failed: \(error.localizedDescription)")
-            }
-        }
     }
 }
 

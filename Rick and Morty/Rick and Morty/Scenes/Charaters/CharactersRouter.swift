@@ -26,8 +26,11 @@ final class CharactersCoordinator: BaseCharactersCoordinator {
     func start() -> UINavigationController?  {
                 
         let viewController = CharactersViewController()
+        let characterRepository = CharacterRepository(characterService: CharacterAPI())
+        
         let presenter = CharactersPresenter(
             view: viewController,
+            characterRepository: characterRepository,
             coordinator: self
         )
         viewController.presenter = presenter
@@ -41,11 +44,10 @@ final class CharactersCoordinator: BaseCharactersCoordinator {
     func navigate(_ router: CharactersRouter) {
         switch router {
             
-        case .details(_):
-            /*let data = LDRTruckDetails.DataStore(truck: data.truck)
-            let coordinator = LDRTruckDetailsCoordinator(navController: navController, data: data)
-            _ = coordinator.start()*/
-            break
+        case .details(let data):
+            let data = CharacterDetails.DataStore(character: data.character)
+            let coordinator = CharacterDetailsCoordinator(navController: navController, data: data)
+            _ = coordinator.start()
         }
     }
 }

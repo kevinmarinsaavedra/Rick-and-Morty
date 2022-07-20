@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 protocol CharactersViewDelegate: BaseViewControllerDelegate {
     func displayFetchCharacters(viewModel: Character.FetchCharacters.ViewModel)
@@ -17,6 +18,22 @@ class CharactersViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - VARIABLES
+    
+    private lazy var searchController: UISearchController = {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.delegate = self
+        
+        search.hidesNavigationBarDuringPresentation = false
+        search.obscuresBackgroundDuringPresentation = false
+        
+        search.searchBar.placeholder = "Search"
+        search.searchBar.backgroundColor = RickAndMortyColor.black
+        search.searchBar.searchTextField.backgroundColor = RickAndMortyColor.white
+        search.searchBar.searchTextField.tintColor = RickAndMortyColor.gray
+
+        return search
+    }()
     
     private struct Constant {
         static let cellNibName = "CharacterCell"
@@ -41,13 +58,24 @@ class CharactersViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.presenter?.fetchCharacters()
+        fetchCharacters()
     }
 
     //MARK: - METHOD
 
     private func setupUI() {
         title = "Characters"
+        navigationItem.searchController = searchController
+        navigationItem.searchController?.automaticallyShowsScopeBar = true
+    }
+    
+    private func fetchCharacters(name: String = "") {
+        
+        let request = Character.FetchCharacters.Request(
+            parameters: Character.Parameters(name: name)
+        )
+        
+        self.presenter?.fetchCharacters(request: request)
     }
     
     private func setupCollectionView() {
@@ -106,9 +134,14 @@ extension CharactersViewController: UICollectionViewDelegateFlowLayout, UICollec
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
         let space = ( collectionView.bounds.width - (Constant.widthCell * 2) ) / 3
-        
-        print(collectionView.bounds.width, Constant.widthCell, collectionView.bounds.width - (Constant.widthCell * 2), space)
-        
+                
         return space
+    }
+}
+
+extension CharactersViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+        fetchCharacters(name: searchController.searchBar.text ?? "")
     }
 }
