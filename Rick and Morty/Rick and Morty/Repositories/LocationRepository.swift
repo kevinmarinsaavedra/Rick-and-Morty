@@ -13,15 +13,15 @@ protocol LocationRepositoryProtocol {
 
 final class LocationRepository: LocationRepositoryProtocol {
     
-    var characterService: LocationServiceProtocol?
+    var locationService: LocationServiceProtocol?
     
-    init(characterService: LocationServiceProtocol) {
-        self.characterService = characterService
+    init(locationService: LocationServiceProtocol) {
+        self.locationService = locationService
     }
     
     func fetchLocations(request: Location.FetchLocations.Request, completion: @escaping (Result<Location.FetchLocations.Response,ErrorService>) -> Void) {
 
-        characterService?.fetchLocations(request: request) { (result) in
+        locationService?.fetchLocations(request: request) { (result) in
             completion(result)
         }
     }

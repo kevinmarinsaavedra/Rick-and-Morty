@@ -13,15 +13,15 @@ protocol EpisodeRepositoryProtocol {
 
 final class EpisodeRepository: EpisodeRepositoryProtocol {
     
-    var characterService: EpisodeServiceProtocol?
+    var episodeService: EpisodeServiceProtocol?
     
-    init(characterService: EpisodeServiceProtocol) {
-        self.characterService = characterService
+    init(episodeService: EpisodeServiceProtocol) {
+        self.episodeService = episodeService
     }
     
     func fetchEpisodes(request: Episode.FetchEpisodes.Request, completion: @escaping (Result<Episode.FetchEpisodes.Response,ErrorService>) -> Void) {
 
-        characterService?.fetchEpisodes(request: request) { (result) in
+        episodeService?.fetchEpisodes(request: request) { (result) in
             completion(result)
         }
     }

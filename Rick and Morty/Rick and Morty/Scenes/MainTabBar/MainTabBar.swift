@@ -28,19 +28,21 @@ class MainTabBarController: BaseUITabBarController {
         charactersVC.tabBarItem = UITabBarItem(
             title: "Characters",
             image: UIImage(systemName: "person.crop.rectangle.stack.fill"),
-            selectedImage: UIImage(systemName: "person.crop.rectangle.stack.fill")
+            tag: 0
         )
-        charactersVC.tabBarItem.tag = 0
         
         //Second Tab
-        let locationsVC = LocationsViewController()
+        let locationsCoordinator = LocationsCoordinator(navController: self.navigationController)
+        
+        guard let locationsVC = locationsCoordinator.start() else {
+            return
+        }
         
         locationsVC.tabBarItem = UITabBarItem(
             title: "Locations",
             image: UIImage(systemName: "gyroscope"),
-            selectedImage: UIImage(systemName: "gyroscope")
+            tag: 1
         )
-        locationsVC.tabBarItem.tag = 1
         
         //Third tab
         let episodesVC = EpisodesViewController()
@@ -48,9 +50,8 @@ class MainTabBarController: BaseUITabBarController {
         episodesVC.tabBarItem = UITabBarItem(
             title: "Episodes",
             image: UIImage(systemName: "play.rectangle.on.rectangle.fill"),
-            selectedImage: UIImage(systemName: "play.rectangle.on.rectangle.fill")
+            tag: 2
         )
-        episodesVC.tabBarItem.tag = 2
         
         let controllers = [charactersVC, locationsVC, episodesVC]
         viewControllers = controllers

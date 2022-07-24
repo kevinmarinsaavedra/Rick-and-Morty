@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationsViewController" customModule="Rick_and_Morty" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="TT3-5V-iwy" id="hFm-1N-J5c"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,9 +17,25 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-5V-iwy">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9ZD-W2-k9K"/>
+                        <outlet property="delegate" destination="-1" id="Qny-VP-7xR"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="139" y="106"/>
+            <constraints>
+                <constraint firstItem="TT3-5V-iwy" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="VF7-de-cnK"/>
+                <constraint firstItem="TT3-5V-iwy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bQW-Gn-hej"/>
+                <constraint firstItem="TT3-5V-iwy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jL6-aK-IHw"/>
+                <constraint firstItem="TT3-5V-iwy" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="n8g-Vj-JHi"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
         </view>
     </objects>
 </document>
