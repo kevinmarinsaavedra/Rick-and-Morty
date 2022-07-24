@@ -63,6 +63,8 @@
 		33DEB021288DABC70032848A /* EpisodeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB020288DABC70032848A /* EpisodeEndPoint.swift */; };
 		33DEB023288DAC4F0032848A /* LocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB022288DAC4F0032848A /* LocationAPI.swift */; };
 		33DEB025288DAC620032848A /* EpisodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB024288DAC620032848A /* EpisodeAPI.swift */; };
+		33DEB027288DB37E0032848A /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB026288DB37E0032848A /* LocationRepository.swift */; };
+		33DEB029288DB3AB0032848A /* EpisodeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB028288DB3AB0032848A /* EpisodeRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,8 @@
 		33DEB020288DABC70032848A /* EpisodeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeEndPoint.swift; sourceTree = "<group>"; };
 		33DEB022288DAC4F0032848A /* LocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAPI.swift; sourceTree = "<group>"; };
 		33DEB024288DAC620032848A /* EpisodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeAPI.swift; sourceTree = "<group>"; };
+		33DEB026288DB37E0032848A /* LocationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
+		33DEB028288DB3AB0032848A /* EpisodeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				33A28D4A28861ACA00DFC276 /* CharacterRepository.swift */,
+				33DEB026288DB37E0032848A /* LocationRepository.swift */,
+				33DEB028288DB3AB0032848A /* EpisodeRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -598,6 +604,8 @@
 				33A28D172884D6B700DFC276 /* LocationsModel.swift in Sources */,
 				33A28D192884D6D200DFC276 /* LocationsRouter.swift in Sources */,
 				33A28D532886461A00DFC276 /* CharacterDetailsViewModel.swift in Sources */,
+				33DEB029288DB3AB0032848A /* EpisodeRepository.swift in Sources */,
+				33DEB027288DB37E0032848A /* LocationRepository.swift in Sources */,
 				33A28D112884D64700DFC276 /* CharactersViewModel.swift in Sources */,
 				33A28D4728860F6B00DFC276 /* CharacterEndPoint.swift in Sources */,
 				33A28CF82884A69D00DFC276 /* UIColor+Extension.swift in Sources */,
