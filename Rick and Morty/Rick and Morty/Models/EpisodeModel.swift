@@ -44,9 +44,11 @@ enum Episode {
     // MARK: - Parameters
     struct Parameters: Codable {
         let name: String?
+        var page: Int?
 
         enum CodingKeys: String, CodingKey {
             case name = "name"
+            case page = "page"
         }
     }
 

@@ -1,55 +1,55 @@
 //
-//  CharacterEndPoint.swift
+//  EpisodeEndPoint.swift
 //  Rick and Morty
 //
-//  Created by Kevin Marin on 18/7/22.
+//  Created by Kevin Marin on 24/7/22.
 //
 
 import  Alamofire
 
-enum CharacterEndpoint {
-    case fetchCharacters(parameters: Parameters? = .none)
+enum EpisodeEndpoint {
+    case fetchEpisodes(parameters: Parameters? = .none)
 }
 
-extension CharacterEndpoint: IEndpoint {
+extension EpisodeEndpoint: IEndpoint {
     var method: HTTPMethod {
         switch self {
-        case .fetchCharacters:
+        case .fetchEpisodes:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .fetchCharacters:
-            return "\(RickAndMorty.BaseURL.URL)/character"
+        case .fetchEpisodes:
+            return "\(RickAndMorty.BaseURL.URL)/episode"
         }
     }
     
     var parameter: Parameters? {
         switch self {
-        case .fetchCharacters(let parameters):
+        case .fetchEpisodes(let parameters):
             return parameters
         }
     }
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchCharacters:
+        case .fetchEpisodes:
             return nil
         }
     }
     
     var interceptor: RequestInterceptor? {
         switch self {
-        case .fetchCharacters:
+        case .fetchEpisodes:
             return nil
         }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-        case .fetchCharacters:
+        case .fetchEpisodes:
             return URLEncoding.queryString
         }
     }

@@ -43,10 +43,12 @@ enum Character {
     
     // MARK: - Parameters
     struct Parameters: Codable {
-        let name: String?
+        var name: String?
+        var page: Int?
 
         enum CodingKeys: String, CodingKey {
             case name = "name"
+            case page = "page"
         }
     }
 

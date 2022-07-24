@@ -59,6 +59,10 @@
 		33DEB017288D9F010032848A /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB016288D9F010032848A /* LocationModel.swift */; };
 		33DEB019288DA09A0032848A /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB018288DA09A0032848A /* ServiceModel.swift */; };
 		33DEB01B288DA2750032848A /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB01A288DA2750032848A /* EpisodeModel.swift */; };
+		33DEB01F288DAB3E0032848A /* LocationEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB01E288DAB3E0032848A /* LocationEndPoint.swift */; };
+		33DEB021288DABC70032848A /* EpisodeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB020288DABC70032848A /* EpisodeEndPoint.swift */; };
+		33DEB023288DAC4F0032848A /* LocationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB022288DAC4F0032848A /* LocationAPI.swift */; };
+		33DEB025288DAC620032848A /* EpisodeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB024288DAC620032848A /* EpisodeAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +137,10 @@
 		33DEB016288D9F010032848A /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		33DEB018288DA09A0032848A /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		33DEB01A288DA2750032848A /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
+		33DEB01E288DAB3E0032848A /* LocationEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEndPoint.swift; sourceTree = "<group>"; };
+		33DEB020288DABC70032848A /* EpisodeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeEndPoint.swift; sourceTree = "<group>"; };
+		33DEB022288DAC4F0032848A /* LocationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAPI.swift; sourceTree = "<group>"; };
+		33DEB024288DAC620032848A /* EpisodeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +278,8 @@
 			isa = PBXGroup;
 			children = (
 				33A28D4528860F1E00DFC276 /* Character */,
+				33DEB01C288DA8240032848A /* Location */,
+				33DEB01D288DA82F0032848A /* Episode */,
 				33A28D3F28860E8300DFC276 /* BaseAPI.swift */,
 				33A28D4128860EB700DFC276 /* ErrorService.swift */,
 				33A28D4328860EF900DFC276 /* NetworkService.swift */,
@@ -404,6 +414,24 @@
 			children = (
 			);
 			path = "Episode details";
+			sourceTree = "<group>";
+		};
+		33DEB01C288DA8240032848A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				33DEB01E288DAB3E0032848A /* LocationEndPoint.swift */,
+				33DEB022288DAC4F0032848A /* LocationAPI.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		33DEB01D288DA82F0032848A /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+				33DEB020288DABC70032848A /* EpisodeEndPoint.swift */,
+				33DEB024288DAC620032848A /* EpisodeAPI.swift */,
+			);
+			path = Episode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,6 +580,7 @@
 				33A28D062884B7D800DFC276 /* LocationsViewController.swift in Sources */,
 				33A28D552886464B00DFC276 /* CharacterDetailsRouter.swift in Sources */,
 				33A28D4E28863ED500DFC276 /* CharacterDetailsViewController.swift in Sources */,
+				33DEB01F288DAB3E0032848A /* LocationEndPoint.swift in Sources */,
 				33A28D2A2885062C00DFC276 /* BaseUITabBarController.swift in Sources */,
 				33DEB019288DA09A0032848A /* ServiceModel.swift in Sources */,
 				33A28D2C2885131C00DFC276 /* RickAndMortyColor.swift in Sources */,
@@ -559,6 +588,7 @@
 				33A28CFC2884A80800DFC276 /* MainTabBar.swift in Sources */,
 				33A28D0A2884B7ED00DFC276 /* EpisodesViewController.swift in Sources */,
 				33A28D4428860EF900DFC276 /* NetworkService.swift in Sources */,
+				33DEB023288DAC4F0032848A /* LocationAPI.swift in Sources */,
 				33A28D322885AADF00DFC276 /* CharacterCell.swift in Sources */,
 				33DEB017288D9F010032848A /* LocationModel.swift in Sources */,
 				33A28D152884D6A400DFC276 /* LocationsPresenter.swift in Sources */,
@@ -572,10 +602,12 @@
 				33A28D4728860F6B00DFC276 /* CharacterEndPoint.swift in Sources */,
 				33A28CF82884A69D00DFC276 /* UIColor+Extension.swift in Sources */,
 				33A28D302885AA8200DFC276 /* TableViewEmpty.swift in Sources */,
+				33DEB021288DABC70032848A /* EpisodeEndPoint.swift in Sources */,
 				3384A9B12887B60200FD1A65 /* Encodable+Extension.swift in Sources */,
 				33A28D022884B7BF00DFC276 /* CharactersViewController.swift in Sources */,
 				33A28D4B28861ACA00DFC276 /* CharacterRepository.swift in Sources */,
 				33A28D1D2884D73000DFC276 /* EpisodesModel.swift in Sources */,
+				33DEB025288DAC620032848A /* EpisodeAPI.swift in Sources */,
 				33A28D4228860EB700DFC276 /* ErrorService.swift in Sources */,
 				33A28D4928860FB500DFC276 /* CharacterAPI.swift in Sources */,
 				33A28CC12884538800DFC276 /* AppDelegate.swift in Sources */,
