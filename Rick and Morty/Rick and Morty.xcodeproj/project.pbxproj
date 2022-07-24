@@ -56,6 +56,9 @@
 		33A28D532886461A00DFC276 /* CharacterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A28D522886461A00DFC276 /* CharacterDetailsViewModel.swift */; };
 		33A28D552886464B00DFC276 /* CharacterDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A28D542886464B00DFC276 /* CharacterDetailsRouter.swift */; };
 		33A28D572887012100DFC276 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A28D562887012100DFC276 /* UIImageView+Extension.swift */; };
+		33DEB017288D9F010032848A /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB016288D9F010032848A /* LocationModel.swift */; };
+		33DEB019288DA09A0032848A /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB018288DA09A0032848A /* ServiceModel.swift */; };
+		33DEB01B288DA2750032848A /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEB01A288DA2750032848A /* EpisodeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +130,9 @@
 		33A28D522886461A00DFC276 /* CharacterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewModel.swift; sourceTree = "<group>"; };
 		33A28D542886464B00DFC276 /* CharacterDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsRouter.swift; sourceTree = "<group>"; };
 		33A28D562887012100DFC276 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		33DEB016288D9F010032848A /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		33DEB018288DA09A0032848A /* ServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
+		33DEB01A288DA2750032848A /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +250,10 @@
 		33A28CF32884A12F00DFC276 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				33DEB018288DA09A0032848A /* ServiceModel.swift */,
 				33A28D352885BA9000DFC276 /* CharacterModel.swift */,
+				33DEB016288D9F010032848A /* LocationModel.swift */,
+				33DEB01A288DA2750032848A /* EpisodeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -544,12 +553,14 @@
 				33A28D552886464B00DFC276 /* CharacterDetailsRouter.swift in Sources */,
 				33A28D4E28863ED500DFC276 /* CharacterDetailsViewController.swift in Sources */,
 				33A28D2A2885062C00DFC276 /* BaseUITabBarController.swift in Sources */,
+				33DEB019288DA09A0032848A /* ServiceModel.swift in Sources */,
 				33A28D2C2885131C00DFC276 /* RickAndMortyColor.swift in Sources */,
 				33A28D1F2884D7B500DFC276 /* EpisodesRouter.swift in Sources */,
 				33A28CFC2884A80800DFC276 /* MainTabBar.swift in Sources */,
 				33A28D0A2884B7ED00DFC276 /* EpisodesViewController.swift in Sources */,
 				33A28D4428860EF900DFC276 /* NetworkService.swift in Sources */,
 				33A28D322885AADF00DFC276 /* CharacterCell.swift in Sources */,
+				33DEB017288D9F010032848A /* LocationModel.swift in Sources */,
 				33A28D152884D6A400DFC276 /* LocationsPresenter.swift in Sources */,
 				33A28D232884DCFA00DFC276 /* BaseViewController.swift in Sources */,
 				33A28D51288645A100DFC276 /* CharacterDetailsPresenter.swift in Sources */,
@@ -577,6 +588,7 @@
 				33A28D382885D80900DFC276 /* UIView+Extension.swift in Sources */,
 				33A28D0F2884D63800DFC276 /* CharactersPresenter.swift in Sources */,
 				33A28D4028860E8300DFC276 /* BaseAPI.swift in Sources */,
+				33DEB01B288DA2750032848A /* EpisodeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

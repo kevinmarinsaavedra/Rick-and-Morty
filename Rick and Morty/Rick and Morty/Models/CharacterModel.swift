@@ -5,9 +5,7 @@
 //  Created by Kevin Marin on 18/7/22.
 //
 
-import Foundation
 import UIKit
-import Alamofire
 
 enum Character {
 
@@ -17,14 +15,8 @@ enum Character {
             var parameters: Parameters?
         }
         
-        struct Response: Codable {
-            let info: InfoModel?
-            let results: [CharacterModel]?
-
-            enum CodingKeys: String, CodingKey {
-                case info = "info"
-                case results = "results"
-            }
+        class Response: ResponseBase<[CharacterModel]> {
+            
         }
         
         struct ViewModel {
@@ -49,6 +41,7 @@ enum Character {
     
     //MARK: - MODEL
     
+    // MARK: - Parameters
     struct Parameters: Codable {
         let name: String?
 
@@ -56,23 +49,8 @@ enum Character {
             case name = "name"
         }
     }
-    
-    // MARK: - Info
-    struct InfoModel: Codable {
-        let count: Int?
-        let pages: Int?
-        let next: String?
-        let prev: String?
 
-        enum CodingKeys: String, CodingKey {
-            case count = "count"
-            case pages = "pages"
-            case next = "next"
-            case prev = "prev"
-        }
-    }
-
-    // MARK: - Result
+    // MARK: - CharacterModel
     struct CharacterModel: Codable {
         let id: Int?
         let name: String?
