@@ -225,7 +225,9 @@
 				33A28CFD2884B5E900DFC276 /* Characters */,
 				33A28D2E2885A39D00DFC276 /* Character details */,
 				33A28CFE2884B5F000DFC276 /* Locations */,
+				33DEB014288D8D530032848A /* Location details */,
 				33A28CFF2884B5FB00DFC276 /* Episodes */,
+				33DEB015288D8D700032848A /* Episode details */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -379,6 +381,20 @@
 				33A28D4828860FB500DFC276 /* CharacterAPI.swift */,
 			);
 			path = Character;
+			sourceTree = "<group>";
+		};
+		33DEB014288D8D530032848A /* Location details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Location details";
+			sourceTree = "<group>";
+		};
+		33DEB015288D8D700032848A /* Episode details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Episode details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

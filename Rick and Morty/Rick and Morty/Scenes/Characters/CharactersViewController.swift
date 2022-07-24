@@ -19,22 +19,6 @@ class CharactersViewController: BaseViewController {
     
     //MARK: - VARIABLES
     
-    private lazy var searchController: UISearchController = {
-        let search = UISearchController(searchResultsController: nil)
-        search.searchResultsUpdater = self
-        search.delegate = self
-        
-        search.hidesNavigationBarDuringPresentation = false
-        search.obscuresBackgroundDuringPresentation = false
-        
-        search.searchBar.placeholder = "Search"
-        search.searchBar.backgroundColor = RickAndMortyColor.black
-        search.searchBar.searchTextField.backgroundColor = RickAndMortyColor.white
-        search.searchBar.searchTextField.tintColor = RickAndMortyColor.gray
-
-        return search
-    }()
-    
     private struct Constant {
         static let cellNibName = "CharacterCell"
         static let widthCell: CGFloat = 180
@@ -65,8 +49,7 @@ class CharactersViewController: BaseViewController {
 
     private func setupUI() {
         title = "Characters"
-        navigationItem.searchController = searchController
-        navigationItem.searchController?.automaticallyShowsScopeBar = true
+        addSearch(target: self)
     }
     
     private func fetchCharacters(name: String = "") {
@@ -137,11 +120,22 @@ extension CharactersViewController: UICollectionViewDelegateFlowLayout, UICollec
                 
         return space
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+            if indexPath.row == viewModel.characters.count - 1 {  //numberofitem count
+                updateNextSet()
+            }
+    }
+
+    func updateNextSet(){
+           print("On Completetion")
+           //fetchCharacters(name: searchController.searchBar.text ?? "")
+    }
 }
 
-extension CharactersViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-    func updateSearchResults(for searchController: UISearchController) {
-        
+extension CharactersViewController: BaseSearchControllerDelegate {
+    
+        func updateSearch(for searchController: UISearchController) {
         fetchCharacters(name: searchController.searchBar.text ?? "")
     }
 }

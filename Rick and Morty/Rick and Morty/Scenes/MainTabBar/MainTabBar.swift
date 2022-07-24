@@ -37,8 +37,8 @@ class MainTabBarController: BaseUITabBarController {
         
         locationsVC.tabBarItem = UITabBarItem(
             title: "Locations",
-            image: UIImage(systemName: "person.fill"),
-            selectedImage: UIImage(systemName: "person.fill")
+            image: UIImage(systemName: "gyroscope"),
+            selectedImage: UIImage(systemName: "gyroscope")
         )
         locationsVC.tabBarItem.tag = 1
         
