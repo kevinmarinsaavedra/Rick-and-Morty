@@ -29,11 +29,11 @@ class EpisodeDetailsPresenter: DetailsPresenterProtocol {
         
         let request = Episode.FetchEpisode.Request(id: id)
         
-        //self.view?.starLoading()
+        self.view?.starLoading()
         
         episodeRepository.fetchEpisode(request: request) { result in
             
-            //self.view?.stopLoading()
+            self.view?.stopLoading()
             
             switch result {
             case .success(let data):

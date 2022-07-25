@@ -29,11 +29,11 @@ class LocationDetailsPresenter: DetailsPresenterProtocol {
         
         let request = Location.FetchLocation.Request(id: id)
         
-        //self.view?.starLoading()
+        self.view?.starLoading()
         
         locationRepository.fetchLocation(request: request) { result in
             
-            //self.view?.stopLoading()
+            self.view?.stopLoading()
             
             switch result {
             case .success(let data):

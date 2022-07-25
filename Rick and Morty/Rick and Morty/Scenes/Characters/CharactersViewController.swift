@@ -98,7 +98,7 @@ extension CharactersViewController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        presenter.navigationDetail(character: viewModel.characters[indexPath.row])
+        presenter.navigationDetails(character: viewModel.characters[indexPath.row])
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

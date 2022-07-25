@@ -13,7 +13,7 @@ protocol CharactersPresenterProtocol {
     func fetchCharacters(request: Character.FetchCharacters.Request)
     
     //MARK: NAVIGATION
-    func navigationDetail(character: Character.CharacterModel)
+    func navigationDetails(character: Character.CharacterModel)
 }
 
 class CharactersPresenter: CharactersPresenterProtocol {
@@ -24,7 +24,7 @@ class CharactersPresenter: CharactersPresenterProtocol {
     private let characterRepository: CharacterRepositoryProtocol
     private weak var view: CharactersViewDelegate?
     
-    init(view: CharactersViewDelegate, characterRepository: CharacterRepositoryProtocol, coordinator: BaseCharactersCoordinator) {
+    init(view: CharactersViewDelegate?, characterRepository: CharacterRepositoryProtocol, coordinator: BaseCharactersCoordinator) {
         self.coordinator = coordinator
         self.characterRepository = characterRepository
         self.view = view
@@ -34,11 +34,11 @@ class CharactersPresenter: CharactersPresenterProtocol {
     
     func fetchCharacters(request: Character.FetchCharacters.Request) {
         
-        //self.view?.starLoading()
+        self.view?.starLoading()
         
         characterRepository.fetchCharacters(request: request) { result in
             
-            //self.view?.stopLoading()
+            self.view?.stopLoading()
             
             switch result {
             case .success(let data):
@@ -53,7 +53,7 @@ class CharactersPresenter: CharactersPresenterProtocol {
     }
     
     //MARK: - NAVIGATION
-    func navigationDetail(character: Character.CharacterModel) {
+    func navigationDetails(character: Character.CharacterModel) {
         let data = Characters.DataStore(character: character)
         coordinator.navigate(.details(data: data))
     }

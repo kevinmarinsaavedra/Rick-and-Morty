@@ -21,7 +21,16 @@ class BaseViewController: UIViewController {
     //MARK: VARIABLES
     var searchDelegate: BaseSearchControllerDelegate?
     
-    var activityIndicator: UIActivityIndicatorView!
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        
+        activityIndicator.style = .large
+        activityIndicator.color = .black
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
+        
+        return activityIndicator
+    }()
     
     private lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)

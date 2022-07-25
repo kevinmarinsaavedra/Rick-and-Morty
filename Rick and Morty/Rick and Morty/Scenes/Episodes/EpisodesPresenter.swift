@@ -33,11 +33,11 @@ class EpisodesPresenter: EpisodesPresenterProtocol {
     
     func fetchEpisodes(request: Episode.FetchEpisodes.Request) {
         
-        //self.view?.starLoading()
+        self.view?.starLoading()
         
         episodeRepository.fetchEpisodes(request: request) { result in
             
-            //self.view?.stopLoading()
+            self.view?.stopLoading()
             
             switch result {
             case .success(let data):

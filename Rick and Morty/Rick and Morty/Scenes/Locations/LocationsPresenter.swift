@@ -33,11 +33,11 @@ class LocationsPresenter: LocationsPresenterProtocol {
     
     func fetchLocations(request: Location.FetchLocations.Request) {
         
-        //self.view?.starLoading()
+        self.view?.starLoading()
         
         locationRepository.fetchLocations(request: request) { result in
             
-            //self.view?.stopLoading()
+            self.view?.stopLoading()
             
             switch result {
             case .success(let data):
