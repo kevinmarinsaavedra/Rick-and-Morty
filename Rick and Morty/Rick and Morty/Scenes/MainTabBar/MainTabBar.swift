@@ -45,7 +45,11 @@ class MainTabBarController: BaseUITabBarController {
         )
         
         //Third tab
-        let episodesVC = EpisodesViewController()
+        let episodesCoordinator = EpisodesCoordinator(navController: self.navigationController)
+
+        guard let episodesVC = episodesCoordinator.start() else {
+            return
+        }
         
         episodesVC.tabBarItem = UITabBarItem(
             title: "Episodes",

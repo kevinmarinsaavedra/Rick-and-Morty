@@ -20,7 +20,7 @@ enum Episode {
         }
         
         struct ViewModel {
-            let characters: [EpisodeModel]
+            let episodes: [EpisodeModel]
         }
     }
     
@@ -30,12 +30,12 @@ enum Episode {
             var id: Int?
         }
         
-        struct Response: Codable {
+        class Response: EpisodeModel {
             
         }
         
         struct ViewModel {
-            let Episode: EpisodeModel
+            let episode: EpisodeModel
         }
     }
     
@@ -53,7 +53,7 @@ enum Episode {
     }
 
     // MARK: - EpisodeModel
-    struct EpisodeModel: Codable {
+    class EpisodeModel: Codable {
         let id: Int
         let name: String
         let airDate: String

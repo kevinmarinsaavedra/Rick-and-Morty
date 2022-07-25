@@ -12,3 +12,8 @@ protocol BaseCoordinator {
 
     func start() -> UINavigationController?
 }
+
+
+protocol BaseGeneralCoordinator {
+    func start(viewController: UIViewController) -> UINavigationController?
+}

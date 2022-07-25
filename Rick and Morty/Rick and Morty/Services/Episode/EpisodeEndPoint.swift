@@ -9,12 +9,14 @@ import  Alamofire
 
 enum EpisodeEndpoint {
     case fetchEpisodes(parameters: Parameters? = .none)
+    case fetchEpisode(id: Int)
+
 }
 
 extension EpisodeEndpoint: IEndpoint {
     var method: HTTPMethod {
         switch self {
-        case .fetchEpisodes:
+        case .fetchEpisodes,.fetchEpisode:
             return .get
         }
     }
@@ -23,6 +25,8 @@ extension EpisodeEndpoint: IEndpoint {
         switch self {
         case .fetchEpisodes:
             return "\(RickAndMorty.BaseURL.URL)/episode"
+        case .fetchEpisode(let id):
+            return "\(RickAndMorty.BaseURL.URL)/episode/\(id)"
         }
     }
     
@@ -30,19 +34,21 @@ extension EpisodeEndpoint: IEndpoint {
         switch self {
         case .fetchEpisodes(let parameters):
             return parameters
+        case .fetchEpisode:
+            return nil
         }
     }
     
     var header: HTTPHeaders? {
         switch self {
-        case .fetchEpisodes:
+        case .fetchEpisodes, .fetchEpisode:
             return nil
         }
     }
     
     var interceptor: RequestInterceptor? {
         switch self {
-        case .fetchEpisodes:
+        case .fetchEpisodes, .fetchEpisode:
             return nil
         }
     }
@@ -51,6 +57,8 @@ extension EpisodeEndpoint: IEndpoint {
         switch self {
         case .fetchEpisodes:
             return URLEncoding.queryString
+        case .fetchEpisode:
+            return JSONEncoding.default
         }
     }
 }

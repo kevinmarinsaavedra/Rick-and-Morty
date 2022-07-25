@@ -9,6 +9,7 @@ import Foundation
 
 protocol LocationRepositoryProtocol {
     func fetchLocations(request: Location.FetchLocations.Request ,completion: @escaping (Result<Location.FetchLocations.Response,ErrorService>) -> Void)
+    func fetchLocation(request: Location.FetchLocation.Request ,completion: @escaping (Result<Location.FetchLocation.Response,ErrorService>) -> Void)
 }
 
 final class LocationRepository: LocationRepositoryProtocol {
@@ -22,6 +23,13 @@ final class LocationRepository: LocationRepositoryProtocol {
     func fetchLocations(request: Location.FetchLocations.Request, completion: @escaping (Result<Location.FetchLocations.Response,ErrorService>) -> Void) {
 
         locationService?.fetchLocations(request: request) { (result) in
+            completion(result)
+        }
+    }
+    
+    func fetchLocation(request: Location.FetchLocation.Request, completion: @escaping (Result<Location.FetchLocation.Response,ErrorService>) -> Void) {
+
+        locationService?.fetchLocation(request: request) { (result) in
             completion(result)
         }
     }

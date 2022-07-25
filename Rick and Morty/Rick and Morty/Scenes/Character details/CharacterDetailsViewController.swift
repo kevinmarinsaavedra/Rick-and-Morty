@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CharacterDetailsViewDelegate: BaseViewControllerDelegate {
-    func displayFetchCharacter(viewModel: Character.FetchCharacter.ViewModel)
+    //Empty
 }
 
 class CharacterDetailsViewController: BaseViewController {
@@ -24,9 +24,7 @@ class CharacterDetailsViewController: BaseViewController {
     
     var presenter: CharacterDetailsPresenterProtocol!
     var viewModel = CharacterDetails.ViewModel()
-    
-    //MARK: - BUILDER
-    
+        
     //MARK: - LIFECYCLE
     
     override func viewDidLoad() {
@@ -37,7 +35,6 @@ class CharacterDetailsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.presenter?.fetchCharacter()
     }
 
     //MARK: - METHOD
@@ -56,8 +53,5 @@ class CharacterDetailsViewController: BaseViewController {
 }
 
 extension CharacterDetailsViewController: CharacterDetailsViewDelegate {
-    
-    func displayFetchCharacter(viewModel: Character.FetchCharacter.ViewModel) {
-        self.viewModel.character = viewModel.character
-    }
+    //Empty
 }

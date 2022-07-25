@@ -9,6 +9,7 @@ import Foundation
 
 protocol EpisodeServiceProtocol  {
     func fetchEpisodes(request: Episode.FetchEpisodes.Request, completion: @escaping (Result<Episode.FetchEpisodes.Response,ErrorService>) -> Void)
+    func fetchEpisode(request: Episode.FetchEpisode.Request, completion: @escaping (Result<Episode.FetchEpisode.Response,ErrorService>) -> Void)
 }
 
 final class EpisodeAPI: EpisodeServiceProtocol {
@@ -26,6 +27,25 @@ final class EpisodeAPI: EpisodeServiceProtocol {
             case .success(let data):
                 do {
                     let response = try JSONDecoder().decode(Episode.FetchEpisodes.Response.self, from: data)
+                    completion(.success(response))
+                } catch let error {
+                    print(error)
+                    completion(.failure(.parse(error)))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func fetchEpisode(request: Episode.FetchEpisode.Request, completion: @escaping (Result<Episode.FetchEpisode.Response, ErrorService>) -> Void) {
+        
+        NetworkService.share.request(endpoint: EpisodeEndpoint.fetchEpisode(id: request.id ?? 0)) { result in
+            
+            switch result {
+            case .success(let data):
+                do {
+                    let response = try JSONDecoder().decode(Episode.FetchEpisode.Response.self, from: data)
                     completion(.success(response))
                 } catch let error {
                     print(error)

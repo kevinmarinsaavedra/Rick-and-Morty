@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum Episodes {
+    
+    struct ViewModel {
+        var episodes : [Episode.EpisodeModel] = []
+    }
+    
+    struct DataStore {
+        var episode : Episode.EpisodeModel
+    }
+}

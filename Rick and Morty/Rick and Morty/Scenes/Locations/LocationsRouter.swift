@@ -45,10 +45,20 @@ final class LocationsCoordinator: BaseLocationsCoordinator {
         switch router {
             
         case .details(let data):
-            /*let data = LocationDetails.DataStore(location: data.location)
-            let coordinator = LocationDetailsCoordinator(navController: navController, data: data)
-            _ = coordinator.start()*/
-            break
+            
+            let coordinator = DetailsCoordinator(navController: navController)
+            
+            let locationRepository = LocationRepository(locationService: LocationAPI())
+            let viewController = DetailsViewController()
+            let presenter = LocationDetailsPresenter(
+                view: viewController,
+                locationRepository: locationRepository
+            )
+            
+            viewController.presenter = presenter
+            viewController.viewModel.id = data.location.id
+            
+            _ = coordinator.start(viewController: viewController)
         }
     }
 }

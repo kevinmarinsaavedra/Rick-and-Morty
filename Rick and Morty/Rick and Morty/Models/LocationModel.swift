@@ -30,7 +30,7 @@ enum Location {
             var id: Int?
         }
         
-        struct Response: Codable {
+        class Response: LocationModel {
             
         }
         
@@ -53,7 +53,7 @@ enum Location {
     }
 
     // MARK: - LocationModel
-    struct LocationModel: Codable {
+    class LocationModel: Codable {
         let id: Int
         let name: String
         let type: String

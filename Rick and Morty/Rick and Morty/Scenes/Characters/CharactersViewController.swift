@@ -26,9 +26,7 @@ class CharactersViewController: BaseViewController {
     
     var presenter: CharactersPresenterProtocol!
     var viewModel = Characters.ViewModel()
-    
-    //MARK: - BUILDER
-    
+        
     //MARK: - LIFECYCLE
     
     override func viewDidLoad() {

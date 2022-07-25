@@ -26,14 +26,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RT8-EF-l2p">
-                                                <rect key="frame" x="0.0" y="5" width="284" height="20"/>
+                                                <rect key="frame" x="0.0" y="5" width="289.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="GillSans-BoldItalic" family="Gill Sans" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="( Planet )" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nkq-Tv-wWt">
-                                                <rect key="frame" x="294" y="4.5" width="99" height="21.5"/>
-                                                <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="17"/>
+                                                <rect key="frame" x="299.5" y="5" width="93.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="16"/>
                                                 <color key="textColor" name="alive"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

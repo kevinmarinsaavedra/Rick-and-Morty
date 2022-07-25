@@ -9,7 +9,6 @@ import UIKit
 
 protocol CharacterDetailsPresenterProtocol {
     //MARK: METHOD
-    func fetchCharacter()
     
     //MARK: NAVIGATION
 }
@@ -29,26 +28,6 @@ class CharacterDetailsPresenter: CharacterDetailsPresenterProtocol {
     }
     
     //MARK: - METHOD
-    
-    func fetchCharacter() {
-        /*
-        //self.view?.starLoading()
-        
-        characterRepository.fetchCharacters() { result in
-            
-            //self.view?.stopLoading()
-            
-            switch result {
-            case .success(let data):
-                let viewModel = Character.FetchCharacters.ViewModel(characters: data.results ?? [])
-                
-                self.view?.displayFetchCharacter(viewModel: viewModel)
-            case .failure(let error):
-                print(error.description)
-                return
-            }
-        }*/
-    }
     
     //MARK: - NAVIGATION
 }

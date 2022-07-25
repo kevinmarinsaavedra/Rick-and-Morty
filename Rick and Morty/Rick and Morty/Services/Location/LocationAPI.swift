@@ -9,6 +9,7 @@ import Foundation
 
 protocol LocationServiceProtocol  {
     func fetchLocations(request: Location.FetchLocations.Request, completion: @escaping (Result<Location.FetchLocations.Response,ErrorService>) -> Void)
+    func fetchLocation(request: Location.FetchLocation.Request, completion: @escaping (Result<Location.FetchLocation.Response,ErrorService>) -> Void)
 }
 
 final class LocationAPI: LocationServiceProtocol {
@@ -26,6 +27,25 @@ final class LocationAPI: LocationServiceProtocol {
             case .success(let data):
                 do {
                     let response = try JSONDecoder().decode(Location.FetchLocations.Response.self, from: data)
+                    completion(.success(response))
+                } catch let error {
+                    print(error)
+                    completion(.failure(.parse(error)))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func fetchLocation(request: Location.FetchLocation.Request, completion: @escaping (Result<Location.FetchLocation.Response, ErrorService>) -> Void) {
+        
+        NetworkService.share.request(endpoint: LocationEndpoint.fetchLocation(id: request.id ?? 0)) { result in
+            
+            switch result {
+            case .success(let data):
+                do {
+                    let response = try JSONDecoder().decode(Location.FetchLocation.Response.self, from: data)
                     completion(.success(response))
                 } catch let error {
                     print(error)

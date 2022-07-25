@@ -25,9 +25,7 @@ class LocationsViewController: BaseViewController {
     
     var presenter: LocationsPresenterProtocol!
     var viewModel = Locations.ViewModel()
-    
-    //MARK: - BUILDER
-    
+        
     //MARK: - LIFECYCLE
     
     override func viewDidLoad() {
@@ -45,7 +43,7 @@ class LocationsViewController: BaseViewController {
     //MARK: - METHOD
 
     private func setupUI() {
-        title = "Characters"
+        title = "Locations"
         addSearch(target: self)
     }
     

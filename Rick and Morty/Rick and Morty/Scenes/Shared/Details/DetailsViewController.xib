@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="Rick_and_Morty" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="l3A-8l-xaO" id="wM3-LI-hfM"/>
+                <outlet property="subtitleLabel" destination="ePV-sR-0bh" id="s23-5B-5WX"/>
+                <outlet property="titleLabel" destination="zT1-MV-cR8" id="lKK-t7-9GC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HPc-q1-ejA">
+                    <rect key="frame" x="20" y="405.5" width="374" height="95"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zT1-MV-cR8" userLabel="title label">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
+                            <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePV-sR-0bh" userLabel="subtitle label">
+                            <rect key="frame" x="0.0" y="35" width="374" height="25"/>
+                            <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="20"/>
+                            <color key="textColor" name="alive"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3A-8l-xaO" userLabel="description label">
+                            <rect key="frame" x="0.0" y="70" width="374" height="25"/>
+                            <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="20"/>
+                            <color key="textColor" name="gray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="zT1-MV-cR8" firstAttribute="centerX" secondItem="HPc-q1-ejA" secondAttribute="centerX" id="kaK-ZM-uIx"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HPc-q1-ejA" secondAttribute="trailing" constant="20" id="TEq-Nu-nh7"/>
+                <constraint firstItem="HPc-q1-ejA" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Xms-5x-fHN"/>
+                <constraint firstItem="HPc-q1-ejA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="aBf-SW-zvw"/>
+                <constraint firstItem="HPc-q1-ejA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="aeI-XZ-aXa"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="107.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="alive">
+            <color red="0.43529411764705883" green="0.81176470588235294" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray">
+            <color red="0.25882352941176473" green="0.25882352941176473" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

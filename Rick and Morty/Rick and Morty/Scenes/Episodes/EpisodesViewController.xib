@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpisodesViewController" customModule="Rick_and_Morty" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="ZMA-Zp-GV0" id="3zH-0R-HOh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
