@@ -12,7 +12,7 @@ protocol EpisodesPresenterProtocol {
     func fetchEpisodes(request: Episode.FetchEpisodes.Request)
     
     //MARK: NAVIGATION
-    func navigationDetail(episode: Episode.EpisodeModel)
+    func navigationDetails(episode: Episode.EpisodeModel)
 }
 
 class EpisodesPresenter: EpisodesPresenterProtocol {
@@ -23,7 +23,7 @@ class EpisodesPresenter: EpisodesPresenterProtocol {
     private let episodeRepository: EpisodeRepositoryProtocol
     private weak var view: EpisodesViewDelegate?
     
-    init(view: EpisodesViewDelegate, episodeRepository: EpisodeRepositoryProtocol, coordinator: BaseEpisodesCoordinator) {
+    init(view: EpisodesViewDelegate?, episodeRepository: EpisodeRepositoryProtocol, coordinator: BaseEpisodesCoordinator) {
         self.coordinator = coordinator
         self.episodeRepository = episodeRepository
         self.view = view
@@ -52,7 +52,7 @@ class EpisodesPresenter: EpisodesPresenterProtocol {
     }
     
     //MARK: - NAVIGATION
-    func navigationDetail(episode: Episode.EpisodeModel) {
+    func navigationDetails(episode: Episode.EpisodeModel) {
         let data = Episodes.DataStore(episode: episode)
         coordinator.navigate(.details(data: data))
     }

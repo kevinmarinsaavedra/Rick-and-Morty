@@ -1,5 +1,5 @@
 //
-//  CharactersViewMock.swift
+//  EpisodesViewMock.swift
 //  Rick and MortyTests
 //
 //  Created by Kevin Marin on 25/7/22.
@@ -8,16 +8,16 @@
 import UIKit
 @testable import Rick_and_Morty
 
-class CharactersViewMock: UIViewController, CharactersViewDelegate {
+class EpisodesViewMock : UIViewController, EpisodesViewDelegate {
     
     // SPY
-    var displayFetchCharactersIsCalled = false
+    var displayFetchEpisodesIsCalled = false
     var starLoadingIsCalled = false
     var stopLoadingIsCalled = false
     // END SPY
     
-    func displayFetchCharacters(viewModel: Character.FetchCharacters.ViewModel) {
-        displayFetchCharactersIsCalled = true
+    func displayFetchEpisodes(viewModel: Episode.FetchEpisodes.ViewModel) {
+        displayFetchEpisodesIsCalled = true
     }
     
     func starLoading() {
@@ -27,4 +27,5 @@ class CharactersViewMock: UIViewController, CharactersViewDelegate {
     func stopLoading() {
         stopLoadingIsCalled = true
     }
+    
 }

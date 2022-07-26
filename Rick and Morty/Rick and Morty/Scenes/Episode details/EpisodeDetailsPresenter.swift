@@ -14,7 +14,7 @@ class EpisodeDetailsPresenter: DetailsPresenterProtocol {
     private let episodeRepository: EpisodeRepositoryProtocol
     private weak var view: DetailsViewDelegate?
     
-    init(view: DetailsViewDelegate, episodeRepository: EpisodeRepositoryProtocol) {
+    init(view: DetailsViewDelegate?, episodeRepository: EpisodeRepositoryProtocol) {
         self.episodeRepository = episodeRepository
         self.view = view
     }
@@ -39,9 +39,9 @@ class EpisodeDetailsPresenter: DetailsPresenterProtocol {
             case .success(let data):
                 
                 let viewModel = DetailsModel.FetchDetails.ViewModel(
-                    title: data.name,
-                    subtitle: data.airDate,
-                    description: data.episode
+                    title: data.name ?? "",
+                    subtitle: data.airDate ?? "",
+                    description: data.episode ?? ""
                 )
                 
                 self.view?.displayFetchDetails(viewModel: viewModel)

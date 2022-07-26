@@ -35,7 +35,6 @@ class CharactersPresenterTests: XCTestCase {
         let request = Character.FetchCharacters.Request()
         
         //WHEN
-        
         sutRepository.expectation = self.expectation(description: "fetchCharacters")
         
         sut?.fetchCharacters(request: request)

@@ -13,7 +13,6 @@ class CharacterRepositoryMock: CharacterRepositoryProtocol {
     // SPY
     var fetchCharactersIsCalled = false
     var expectation: XCTestExpectation!
-    
     // END SPY
     
     func fetchCharacters(request: Character.FetchCharacters.Request, completion: @escaping (Result<Character.FetchCharacters.Response, ErrorService>) -> Void) {

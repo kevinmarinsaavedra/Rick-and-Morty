@@ -96,7 +96,7 @@ extension EpisodesViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 
-        presenter.navigationDetail(episode: viewModel.episodes[indexPath.row])
+        presenter.navigationDetails(episode: viewModel.episodes[indexPath.row])
     }
 }
 

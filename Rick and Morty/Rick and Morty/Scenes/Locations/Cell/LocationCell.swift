@@ -25,7 +25,7 @@ class LocationCell: UITableViewCell {
         self.location = location
         
         nameLabel.text = location.name
-        typeLabel.text = "(\(location.type))"
+        typeLabel.text = "(\(location.type ?? ""))"
         dimensionLabel.text = location.dimension
     }
 }

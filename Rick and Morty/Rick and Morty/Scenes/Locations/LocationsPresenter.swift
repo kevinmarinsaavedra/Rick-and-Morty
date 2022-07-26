@@ -12,7 +12,7 @@ protocol LocationsPresenterProtocol {
     func fetchLocations(request: Location.FetchLocations.Request)
     
     //MARK: NAVIGATION
-    func navigationDetail(location: Location.LocationModel)
+    func navigationDetails(location: Location.LocationModel)
 }
 
 class LocationsPresenter: LocationsPresenterProtocol {
@@ -23,7 +23,7 @@ class LocationsPresenter: LocationsPresenterProtocol {
     private let locationRepository: LocationRepositoryProtocol
     private weak var view: LocationsViewDelegate?
     
-    init(view: LocationsViewDelegate, locationRepository: LocationRepositoryProtocol, coordinator: BaseLocationsCoordinator) {
+    init(view: LocationsViewDelegate?, locationRepository: LocationRepositoryProtocol, coordinator: BaseLocationsCoordinator) {
         self.coordinator = coordinator
         self.locationRepository = locationRepository
         self.view = view
@@ -52,7 +52,7 @@ class LocationsPresenter: LocationsPresenterProtocol {
     }
     
     //MARK: - NAVIGATION
-    func navigationDetail(location: Location.LocationModel) {
+    func navigationDetails(location: Location.LocationModel) {
         let data = Locations.DataStore(location: location)
         coordinator.navigate(.details(data: data))
     }

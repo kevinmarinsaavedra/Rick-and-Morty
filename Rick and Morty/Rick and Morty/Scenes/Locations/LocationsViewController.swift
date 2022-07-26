@@ -96,7 +96,7 @@ extension LocationsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 
-        presenter.navigationDetail(location: viewModel.locations[indexPath.row])
+        presenter.navigationDetails(location: viewModel.locations[indexPath.row])
     }
 }
 

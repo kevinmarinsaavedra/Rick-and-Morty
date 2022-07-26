@@ -54,13 +54,23 @@ enum Location {
 
     // MARK: - LocationModel
     class LocationModel: Codable {
-        let id: Int
-        let name: String
-        let type: String
-        let dimension: String
-        let residents: [String]
-        let url: String
-        let created: String
+        var id: Int?
+        var name: String?
+        var type: String?
+        var dimension: String?
+        var residents: [String]?
+        var url: String?
+        var created: String?
+        
+        init( id: Int?, name: String?, type: String?, dimension: String?, residents: [String]?, url: String?, created: String?) {
+            self.id = id
+            self.name = name
+            self.type = type
+            self.dimension = dimension
+            self.residents = residents
+            self.url = url
+            self.created = created
+        }
 
         enum CodingKeys: String, CodingKey {
             case id = "id"

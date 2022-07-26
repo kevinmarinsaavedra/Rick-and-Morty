@@ -14,7 +14,7 @@ class LocationDetailsPresenter: DetailsPresenterProtocol {
     private let locationRepository: LocationRepositoryProtocol
     private weak var view: DetailsViewDelegate?
     
-    init(view: DetailsViewDelegate, locationRepository: LocationRepositoryProtocol) {
+    init(view: DetailsViewDelegate?, locationRepository: LocationRepositoryProtocol) {
         self.locationRepository = locationRepository
         self.view = view
     }
@@ -38,9 +38,9 @@ class LocationDetailsPresenter: DetailsPresenterProtocol {
             switch result {
             case .success(let data):
                 let viewModel = DetailsModel.FetchDetails.ViewModel(
-                    title: data.name,
-                    subtitle: data.type,
-                    description: data.dimension
+                    title: data.name ?? "",
+                    subtitle: data.type ?? "",
+                    description: data.dimension ?? ""
                 )
                 
                 self.view?.displayFetchDetails(viewModel: viewModel)
